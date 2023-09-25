@@ -1,4 +1,4 @@
-export const Country = () => {
+export const CountryPage = () => {
   return (
     <>
       <h1>Country</h1>

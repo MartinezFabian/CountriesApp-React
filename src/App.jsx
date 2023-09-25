@@ -1,9 +1,12 @@
 import { AppRouter } from './router/AppRouter';
+import { Navbar } from './ui/components/Navbar';
 
 export const App = () => {
   return (
     <>
-      <h1>Countries App</h1>
+      <header>
+        <Navbar></Navbar>
+      </header>
 
       <AppRouter></AppRouter>
     </>
