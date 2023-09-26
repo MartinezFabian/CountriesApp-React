@@ -1,0 +1,23 @@
+.main {
+  width: 100%;
+  min-height: 70vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .main {
+    min-height: 90vh;
+  }
+}
+
+.text {
+  font-size: 1.7rem;
+}
+
+@media (min-width: 768px) {
+  .text {
+    font-size: 2rem;
+  }
+}
