@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { fetchCountryByName } from '../api/fetchCountryByName';
+import styles from './CountryPage.module.css';
 
 export const CountryPage = () => {
   const [countryData, setCountryData] = useState({});
@@ -21,45 +22,59 @@ export const CountryPage = () => {
   }, [countryId]);
 
   return (
-    <main>
-      {isLoading ? <span></span> : null}
+    <main className={styles.main}>
+      {isLoading ? <span className={styles.loader}></span> : null}
 
-      <section>
-        <img src={countryData?.flag} alt={countryData?.name} />
+      <section className={styles.main__section}>
+        <img src={countryData?.flag} alt={countryData?.name} className={styles.main__flag} />
 
-        <div>
-          <h3>Bordering countries</h3>
+        <div className={styles.main__container}>
+          {countryData?.borders?.length > 0 ? (
+            <h3 className={styles.main__title}>Bordering countries</h3>
+          ) : null}
 
-          <div>
+          <div className={styles.main__borders}>
             {countryData?.borders?.map((border) => (
-              <h3 key={border}>{border}</h3>
+              <h3 key={border} className={styles.border}>
+                {border}
+              </h3>
             ))}
           </div>
         </div>
       </section>
 
-      <section>
+      <section className={styles.main__section}>
         <h2>{countryData?.name}</h2>
-        <div>
-          <p>
-            Capital: <span>{countryData?.capital}</span>
+        <div className={styles.info}>
+          <p className={styles.info__bold}>
+            Capital: <span className={styles.info__text}>{countryData?.capital}</span>
           </p>
-          <p>
-            Region: <span>{countryData?.region}</span>
+          <p className={styles.info__bold}>
+            Region: <span className={styles.info__text}>{countryData?.region}</span>
           </p>
-          <p>
-            Sub Region: <span>{countryData?.subregion}</span>
+          <p className={styles.info__bold}>
+            Sub Region: <span className={styles.info__text}>{countryData?.subregion}</span>
           </p>
-          <p>
-            Top Level Domain: <span>{countryData?.topLevelDomain}</span>
+          <p className={styles.info__bold}>
+            Top Level Domain: <span className={styles.border}>{countryData?.topLevelDomain}</span>
           </p>
 
-          <p>
-            Population: <span>{countryData?.population?.toLocaleString('en-US')}</span>
+          <p className={styles.info__bold}>
+            Population:{' '}
+            <span className={styles.info__text}>
+              {countryData?.population?.toLocaleString('en-US')}
+            </span>
           </p>
-          <p>
-            Languages: <span>{countryData?.languages?.join(', ')}</span>
+          <p className={styles.info__bold}>
+            Languages:{' '}
+            <span className={styles.info__text}>{countryData?.languages?.join(', ')}</span>
           </p>
+        </div>
+
+        <div className={styles.containerbtn}>
+          <Link to={'/'} className={styles.btn}>
+            Back
+          </Link>
         </div>
       </section>
     </main>

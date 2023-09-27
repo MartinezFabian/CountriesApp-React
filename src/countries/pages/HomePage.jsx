@@ -12,7 +12,7 @@ export const HomePage = () => {
 
     setCountries(response);
 
-    //setIsLoading(false);
+    setIsLoading(false);
   };
 
   useEffect(() => {
