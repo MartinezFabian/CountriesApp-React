@@ -1,6 +1,9 @@
 :root {
   --main-font: 'Poppins', sans-serif;
   --black: #1d1d1d;
+  --white: #ffffff;
+  --primary-color: #6868f0;
+  --light-gray: rgb(237, 237, 237);
 }
 
 html {

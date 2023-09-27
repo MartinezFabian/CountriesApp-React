@@ -1,22 +1,23 @@
 import PropTypes from 'prop-types';
+import styles from './CountryCard.module.css';
 
 export const CountryCard = ({ name, flag }) => {
   return (
-    <article>
-      <div>
-        <img src={flag} alt={name} />
+    <article className={styles.card}>
+      <div className={styles.card__container}>
+        <img src={flag} alt={name} className={styles.card__img} />
       </div>
 
-      <h3>{name}</h3>
+      <h3 className={styles.card__heading}>{name}</h3>
 
-      <div>
+      <div className={styles.card__icon}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6"
+          stroke="#6868f0"
+          className={styles.card__svg}
         >
           <path
             strokeLinecap="round"

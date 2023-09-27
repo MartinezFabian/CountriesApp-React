@@ -1,0 +1,56 @@
+.loader {
+  width: 6rem;
+  height: 6rem;
+  border: 0.6rem solid var(--primary-color);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  position: fixed; /* Mantiene el elemento fijo en la ventana del navegador */
+  top: 50%; /* Coloca el elemento a la mitad de la altura de la ventana */
+  left: 50%; /* Coloca el elemento a la mitad del ancho de la ventana */
+  transform: translate(-50%, -50%); /* Centra el elemento tanto vertical como horizontalmente */
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.main {
+  max-width: 120rem;
+  width: 90%;
+  margin: 8rem auto;
+}
+
+@media (min-width: 768px) {
+  .main {
+    margin: 20rem auto;
+  }
+}
+
+.main__heading {
+  margin-bottom: 5rem;
+  margin-left: 1rem;
+  color: var(--primary-color);
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 38rem);
+    justify-content: center;
+  }
+}

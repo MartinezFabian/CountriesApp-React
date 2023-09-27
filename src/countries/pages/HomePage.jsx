@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchAllCountries } from '../api/fetchAllCountries';
 import { CountryCard } from '../components/CountryCard';
+import styles from './HomePage.module.css';
 
 export const HomePage = () => {
   const [countries, setCountries] = useState([]);
@@ -11,7 +12,7 @@ export const HomePage = () => {
 
     setCountries(response);
 
-    setIsLoading(false);
+    //setIsLoading(false);
   };
 
   useEffect(() => {
@@ -19,12 +20,16 @@ export const HomePage = () => {
   }, []);
 
   return (
-    <main>
-      {isLoading ? <span className="loader"></span> : null}
+    <main className={styles.main}>
+      <h2 className={styles.main__heading}>All countries</h2>
 
-      {countries.map((country) => (
-        <CountryCard key={country.key} name={country.name} flag={country.flag}></CountryCard>
-      ))}
+      {isLoading ? <span className={styles.loader}></span> : null}
+
+      <div className={styles.grid}>
+        {countries.map((country) => (
+          <CountryCard key={country.key} name={country.name} flag={country.flag}></CountryCard>
+        ))}
+      </div>
     </main>
   );
 };

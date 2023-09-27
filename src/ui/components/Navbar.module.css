@@ -4,6 +4,7 @@
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
+  background-color: var(--white);
 }
 
 @media (min-width: 768px) {
