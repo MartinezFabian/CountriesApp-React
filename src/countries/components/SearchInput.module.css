@@ -1,3 +1,8 @@
+.form {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
 .form__container {
   display: flex;
   gap: 1rem;
