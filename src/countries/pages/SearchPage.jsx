@@ -1,7 +1,9 @@
+import { SearchInput } from '../components/SearchInput';
+
 export const SearchPage = () => {
   return (
-    <>
-      <h1>Search Page</h1>
-    </>
+    <main>
+      <SearchInput></SearchInput>
+    </main>
   );
 };

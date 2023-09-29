@@ -1,4 +1,4 @@
-export async function fetchCountriesByName(textSearched) {
+export async function fetchCountriesByName(textSearched = '') {
   try {
     const response = await fetch(`https://restcountries.com/v3.1/name/${textSearched}`);
 
