@@ -31,6 +31,12 @@ export const SearchPage = () => {
 
       {isLoading ? <span className={styles.loader}></span> : null}
 
+      {q === '' ? (
+        <div className={styles.alert}>
+          <div className={styles.alert__text}>Type the name of the country you are looking for</div>
+        </div>
+      ) : null}
+
       {countries.length === 0 && q !== '' ? (
         <div className={styles.alert}>
           <div className={styles.alert__text}>
