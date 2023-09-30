@@ -1,0 +1,8 @@
+.select {
+  height: 4rem;
+  width: 30rem;
+  max-width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--white);
+}

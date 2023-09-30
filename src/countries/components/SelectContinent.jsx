@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
+import styles from './SelectContinent.module.css';
+
 export const SelectContinent = () => {
   const navigate = useNavigate();
 
@@ -10,13 +12,23 @@ export const SelectContinent = () => {
   };
 
   return (
-    <select onChange={onChangeSelect}>
-      <option>Filter by Continent</option>
-      <option value="Africa">Africa</option>
+    <select onChange={onChangeSelect} defaultValue="" className={styles.select}>
+      <option value="" disabled className={styles.select__option}>
+        Filter by Continent
+      </option>
+      <option value="Africa" className={styles.select__option}>
+        Africa
+      </option>
       <option value="Americas">Americas</option>
-      <option value="Asia">Asia</option>
-      <option value="Europe">Europe</option>
-      <option value="Oceania">Oceania</option>
+      <option value="Asia" className={styles.select__option}>
+        Asia
+      </option>
+      <option value="Europe" className={styles.select__option}>
+        Europe
+      </option>
+      <option value="Oceania" className={styles.select__option}>
+        Oceania
+      </option>
     </select>
   );
 };

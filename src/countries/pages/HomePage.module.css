@@ -35,8 +35,19 @@
   }
 }
 
+.main__container {
+  margin-bottom: 8rem;
+}
+
+@media (min-width: 768px) {
+  .main__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 .main__heading {
-  margin-bottom: 5rem;
   margin-left: 1rem;
   color: var(--primary-color);
 }

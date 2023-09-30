@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { fetchAllCountries } from '../api/fetchAllCountries';
 import { CountryCard } from '../components/CountryCard';
 import styles from './HomePage.module.css';
+import { SelectContinent } from '../components/SelectContinent';
 
 export const HomePage = () => {
   const [countries, setCountries] = useState([]);
@@ -21,7 +22,11 @@ export const HomePage = () => {
 
   return (
     <main className={styles.main}>
-      <h2 className={styles.main__heading}>All countries</h2>
+      <div className={styles.main__container}>
+        <h2 className={styles.main__heading}>All countries</h2>
+
+        <SelectContinent></SelectContinent>
+      </div>
 
       {isLoading ? <span className={styles.loader}></span> : null}
 
