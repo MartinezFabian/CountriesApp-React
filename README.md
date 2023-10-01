@@ -26,4 +26,4 @@ The main purpose of this project is to demonstrate proficiency in working with R
 
 ## Online Demo
 
-To see the project in action, you can check out the online demo [here](#insert_demo_link).
+To see the project in action, you can check out the online demo [here](https://martinezfabian.github.io/CountriesApp-React/).
